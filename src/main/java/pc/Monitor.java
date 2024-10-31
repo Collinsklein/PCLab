@@ -2,19 +2,26 @@ package pc;
 
 public class Monitor {
 
-    private String modelNumber;
+    private String resolution;
+    private int modelNumber;
     private String manufacturerName;
 
-    public Monitor(String modelNumber, String manufacturerName) {
+
+    public Monitor(Resolution manufacturerName, int modelNumber, String resolution) {
+        this.manufacturerName = String.valueOf(manufacturerName);
         this.modelNumber = modelNumber;
-        this.manufacturerName = manufacturerName;
+        this.resolution = resolution;
     }
 
-    public String getModelNumber() {
-        return modelNumber;
+    public String getResolution() {
+        return resolution;
     }
 
-    public void setModelNumber(String modelNumber) {
+    public void setResolution(String resolution) {
+        this.resolution = resolution;
+    }
+
+    public void setModelNumber(int modelNumber) {
         this.modelNumber = modelNumber;
     }
 
@@ -27,13 +34,15 @@ public class Monitor {
     }
 
     public void drawPixel (int x, int y, String color){
-        System.out.println("Drawing pixel at \" + x + \",\" + y + \" \" + \" in color \"+ color");
+       // System.out.println("Drawing pixel at \" + x + \",\" + y + \" \" + \" in color \"+ color");
+        System.out.println("Drawing pixel at (" + x + ", " + y + ") with color: " + color);
     }
 
     @Override
     public String toString() {
         return "Monitor{" +
-                "modelNumber='" + modelNumber + '\'' +
+                "resolution='" + resolution + '\'' +
+                ", modelNumber=" + modelNumber +
                 ", manufacturerName='" + manufacturerName + '\'' +
                 '}';
     }

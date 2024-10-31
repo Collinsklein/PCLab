@@ -1,18 +1,17 @@
 package pc;
 
-import java.awt.*;
 
-public class Case implements Comparable<Case> {
+public class Case {
     private String model;
     private String manufacturer;
     private String powerSupply;
-    private Dimension dimension;
+    private Dimensions dimensions;
 
-    public Case(String model, String manufacturer, String powerSupply, Dimension dimension) {
+    public Case(String model, String manufacturer, String powerSupply, Dimensions dimensions) {
         this.model = model;
         this.manufacturer = manufacturer;
         this.powerSupply = powerSupply;
-        this.dimension = dimension;
+        this.dimensions = dimensions;
     }
 
     public String getModel() {
@@ -39,19 +38,25 @@ public class Case implements Comparable<Case> {
         this.powerSupply = powerSupply;
     }
 
-    public Dimension getDimension() {
-        return dimension;
+    public Dimensions getDimensions() {
+        return dimensions;
     }
 
-    public void setDimension(Dimension dimension) {
-        this.dimension = dimension;
+    public void setDimensions(Dimensions dimensions) {
+        this.dimensions = dimensions;
     }
+
     public void pressPowerButton(){
         System.out.println("Power Button Pressed");
     }
 
     @Override
-    public int compareTo(Case o) {
-        return this.model.compareTo(this.getModel());
+    public String toString() {
+        return "Case{" +
+                "model='" + model + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
+                ", powerSupply='" + powerSupply + '\'' +
+                ", dimensions=" + dimensions +
+                '}';
     }
 }

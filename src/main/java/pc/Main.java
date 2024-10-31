@@ -1,21 +1,28 @@
 package pc;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+
+
 
 public class Main {
     public static void main(String[] args) {
+        Dimensions dimensions = new Dimensions(12,12,10);
 
-        PC pc = new PC();
+        Case pcCase = new Case("Windows xp","Microsoft","220", dimensions );
+
+
+        Resolution resolution = new Resolution(10, 10);
+
+        Motherboard motherboard = new Motherboard("sony23","Sony",4,6,"sony-bios");
+
+        Monitor monitor = new Monitor(resolution,1234, "100*100pixels");
+
+        PC pc = new PC(pcCase,motherboard,monitor);
+
+
         pc.description();
 
         pc.powerUp();
-        List<PC> pc1 = new ArrayList<>();
-        pc1.add(new PC());
 
-        PcNameComparator nameComparator = new PcNameComparator();
-        Collections.sort(pc1,nameComparator);
 
 
     }
