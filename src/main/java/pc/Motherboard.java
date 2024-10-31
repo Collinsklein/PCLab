@@ -13,9 +13,7 @@ public class Motherboard {
         this.cardSlots = cardSlots;
         this.bios = bios;
     }
-//    public void loadProgram(String programName){
-//        System.out.println(programName + "is now running...");
-//    }
+
     public void loadProgram(String programName) {
     System.out.println(programName + " " + "is now running...");
 }
